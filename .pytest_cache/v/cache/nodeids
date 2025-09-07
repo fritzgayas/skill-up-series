@@ -1,0 +1,22 @@
+[
+  "tests/test_circle.py::TestCircle::test_area",
+  "tests/test_circle.py::TestCircle::test_circumference",
+  "tests/test_circle.py::TestCircle::test_invalid_radius",
+  "tests/test_circle.py::TestCircle::test_method",
+  "tests/test_circle.py::TestCircle::test_one",
+  "tests/test_circle.py::TestCircle::test_two",
+  "tests/test_my_functions.py::test_add",
+  "tests/test_my_functions.py::test_add_strings",
+  "tests/test_my_functions.py::test_divide",
+  "tests/test_service.py::test_get_user_from_db",
+  "tests/test_service.py::test_get_users",
+  "tests/test_service.py::test_get_users_error",
+  "tests/test_university.py::test_add_student_over_limit",
+  "tests/test_university.py::test_add_student_under_limit[Jose Rizal]",
+  "tests/test_university.py::test_add_student_under_limit[Juan Dela Cruz]",
+  "tests/test_university.py::test_add_student_under_limit[Maria Clara]",
+  "tests/test_university.py::test_change_teacher",
+  "tests/test_university.py::test_classroom_flow",
+  "tests/test_university.py::test_initial_setup",
+  "tests/test_university.py::test_remove_student"
+]

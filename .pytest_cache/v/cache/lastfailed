@@ -1,0 +1,6 @@
+{
+  "tests/test_circle.py::TestCircle::test_circumference": true,
+  "tests/test_circle.py::TestCircle::test_invalid_radius": true,
+  "tests/test_circle.py::TestCircle::test_method": true,
+  "tests/test_service.py::test_get_users_error": true
+}
