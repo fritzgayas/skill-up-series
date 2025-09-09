@@ -1,0 +1,293 @@
+<!DOCTYPE html> <!-- This tells the browser that this is an HTML5 document -->
+<html lang="en"> <!-- html opening tag with lang attribute-->
+<!-- You can go to validator.w3.org for html checker -->
+<!-- You can install HTML5 Outliner as chrome extension for semantic outline check -->
+    
+    <head> <!-- metadata about the page and is NOT seen on the page-->
+        <meta charset="UTF-8"> <!-- character encoding -->
+        <meta name="author" content="Fritz Gayas"> <!-- author of the page -->
+        <meta name="description" content="This page contains fundamentals in HTML."> <!-- description of the page -->
+        <title>
+            My First Webpage
+        </title>
+        <link rel="icon" href="logo.png"> <!-- how does this relate to the webpage? what are you referencing? the size of the favicon has to be vsmall like 16x16-->
+        <link rel="stylesheet" href="main.css"> <!-- we are linking to an external css file; this is a relative reference -->
+    </head>
+
+    <body> <!-- what you really see on the webpage-->
+
+        <header> <!-- header tag is a block level element that provides semantic meaning -->
+        <h1> My Goals for the Year </h1>
+
+            <nav aria-label="primary-navigation"> <!-- nav tag is a block level element that provides semantic meaning; aria-label is for accessibility -->
+                <ul>
+                    <li> <a href="#html">Learn HTML</a> </li> <!-- this is how you do internal links parang sa gdocs -->
+                    <li> <a href="#vacation">Plan a Vacation</a> </li>
+                    <li> <a href="#contact">Contact Me</a> </li>
+                </ul>
+            </nav>
+        </header>
+
+        <hr> <!-- horizontal rule -->
+        <main>
+            <article id="html"> <!-- article tag is a block level element that provides semantic meaning -->
+                <h2> I'm excited to start learning HTML </h2>
+                <p> This will be the foundation of my very first webpage. </p>
+            <section>
+                <h3>HTML5</h3>
+                <img src="img/html_logo_300x300.png" alt="HTML5 Logo" title="Currently studying HTML5" width="300" height="300"> <!-- we need to provide the sizes to give the browser an idea to avoid cumulative layout shift-->
+                <figure>
+                    <figcaption>A simple example of HTML5 code</figcaption>
+                    <p>
+                        <code>&lt;h1&gt;Hello, World!&lt;/h1&gt;</code>
+                    </p>
+                </figure>
+            </section>
+            <section>
+                <h3> My Daily Schedule </h3>
+                <p> Let me tell you how:</p>
+                    <ol> <!-- ordered list -->
+                    <li>...I learn more about web devopment.</li>
+                    <li>...I plan out my schedule.</li>
+                    <li>...I use resources from freeCodeCamp and <abbr title="Mozilla Developer Network">
+                        <a href="https://developer.mozilla.org">MDN</a></abbr>.</li> <!-- a href is an anchor tag for links; this is an absolute reference (e.g. URL) --> 
+                    </ol>
+                <aside> <!-- aside tag is a block level element that provides semantic meaning. Side bar on the page; just complementary. -->
+                    <details>
+                        <summary>Guess the <mark>number of hours</mark> I code per day</summary> <!-- it's like a drop down button; perfect for Q and A -->
+                        <p> I start at <time datetime="08:00">8 am</time> and I write code for <time datetime="PT3H">3 hours</time> every morning</p>
+                    </details>
+                </aside>
+                
+                <br>
+
+                <table>
+                    <caption>My Daily Schedule</caption> 
+                    <thead> 
+                        <tr> <!-- table row -->
+                            <th>&nbsp;</th>
+                            <th scope="col">Time</th> <!-- table header -->
+                            <th scope="col">Activity</th> <!-- scope attribute is for accessibility -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Morning</th> <!-- table header for the rows P1-->
+                            <td> <!-- table data -->
+                                <time datetime="08:00">8am</time>-<time datetime="11:00">11am</time>
+                            </td>
+                            <td>Write Code</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Break</th> <!-- table header for the rows P2-->
+                            <td>
+                                <time datetime="11:00">11am</time>-<time datetime="12:00">12pm</time>
+                            </td>
+                            <td>Eat Lunch</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Afternoon</th> <!-- table header for the rows P3-->
+                            <td>
+                                <time datetime="12:00">12pm</time>-<time datetime="17:00">5pm</time>
+                            </td>
+                            <td>Study for Other Courses</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Evening</th> <!-- table header for the rows P4-->
+                            <td rowspan="2"> <!-- rowspan is how many rows you want to span -->
+                                All Other Times
+                            </td>
+                            <td>Free Time</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Night</th> <!-- table header for the rows P5-->
+                            <td>Sleep</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"> That’s my daily routine, five days a week: code, eat, sleep… and code again!</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+            </article>
+
+        <hr> <!-- basically the horizontal rule (hr) creates lines -->
+
+            <article id="vacation"> <!-- section tag is a block level element that provides semantic meaning -->
+                <h2> I am also planning a vacation </h2>
+                <p> I have been working and <em> really need a getaway.</em> </p>
+                <p> I live in the <abbr title="Philippines">PH</abbr> so I want to visit a beach.</p> <!-- you abbreviate the Philippines into PH -->
+            
+            <section>
+                <h3> Places I'd like to visit </h3>
+                    <ul> <!-- unordered list -->
+                    <li>
+                        <p> I've heard good things about Boracay, Philippines. </p>
+                        <figure>
+                            <img src="img/boracay.jpg" alt="Boracay Island" title="I want to visit Boracay Island." width="660" height="260" loading="lazy">
+                            <figcaption> Boracay Island Getaway </figcaption> <!-- this is how you put a caption for the image -->
+                        </figure>
+                    </li>
+                    <li>
+                        <p> I've heard good things about going here:</p>
+                        <address> <!-- this is how you put an address in html. It provides semantic meaning. -->
+                            Mapúa University <br>
+                            658 Muralla St, <br>
+                            Intramuros, Manila, Philippines <br>
+                        </address>
+                        <figure>
+                        <img src="img/mapua.png" alt="Mapua University Manila Campus" title="Back in Intramuros!" width="660" height="260" loading="lazy">
+                        <figcaption> One of the Best Universities in the World </figcaption>
+                        </figure>
+                    </li>
+                    </ul>
+            </section>
+            <!-- TODO: Add more places. Comments can actually be seen by the public through Inspect elements -->
+            <section>
+                <h3> Places I want to avoid </h3>   
+                    <dl> <!-- description list -->
+                        <dt> Desert </dt> <!-- description term, left side -->
+                        <dd> Extremely <strong>hot</strong> during the day and freezing at night. </dd> <!-- description definition, right side indented -->
+                        <dt> Traffic Jams </dt>
+                        <dd> Hours wasted sitting in cars with loud honking. </dd>
+                        <dt> Haunted Houses </dt>
+                        <dd> Too creepy for me, especially at night. </dd>
+                    </dl>
+            </section>
+            </article>
+
+            <hr>
+            
+            <article id="contact">
+                <h2>Contact Me</h2>
+                <p>I'd really like to hear from you!</p>
+
+                <form action="https://postman-echo.com/get" method="get">
+                    <fieldset> <!-- fieldset tag is used to group related elements in a form -->
+                    <legend>Personal Info</legend> <!-- legend tag is used to provide a caption for the fieldset -->
+                    <p>
+                        <label for="fullName">Full Name:</label> <!-- label tag is for accessibility; for attribute should match the id of the input field -->
+                        <input type="text" id="fullName" name="fullName" placeholder="Your full name here" autocomplete="on" required> <!-- input tag is an empty tag; name attribute is the key when the form is submitted; placeholder attribute is a hint to the user; required attribute means this field must be filled out before submitting the form -->
+                    </p>
+                    <p>
+                        <label for="emailAddress">Email Address:</label> <!-- label tag is for accessibility; for attribute should match the id of the input field -->
+                        <input type="email" id="emailAddress" name="emailAddress" placeholder="Your @gmail here" autocomplete="on" required> <!-- input tag is an empty tag; name attribute is the key when the form is submitted; placeholder attribute is a hint to the user; required attribute means this field must be filled out before submitting the form -->
+                    </p>
+                    <p>
+                        <label for="password">Password:</label> <!-- label tag is for accessibility; for attribute should match the id of the input field -->
+                        <input type="password" id="password" name="password" placeholder="Your password here" minlength="3" required> <!-- input tag is an empty tag; name attribute is the key when the form is submitted; placeholder attribute is a hint to the user; required attribute means this field must be filled out before submitting the form -->
+                    </p>
+                    <p>
+                        <label for="coffee">Favorite Coffee:</label> <!-- label tag is for accessibility; for attribute should match the id of the input field -->
+                        <select name="coffee" id="coffee" required> 
+                            <option value="" disabled selected>Select your favorite coffee</option> 
+                            <optgroup label="Hot Coffees"> <!-- optgroup tag is used to group related options in a drop-down list -->
+                                <option value="espresso">Espresso</option> <!-- option tag is an option in the drop-down list; disabled attribute means this option cannot be selected; selected attribute means this option is selected by default -->
+                                <option value="americano">Americano</option>
+                                <option value="latte">Latte</option>
+                                <option value="cappuccino">Cappuccino</option>
+                                <option value="mocha">Mocha</option>
+                            </optgroup>
+                            <optgroup label="Cold Coffees">
+                                <option value="iced_espresso">Iced Espresso</option>
+                                <option value="iced_americano">Iced Americano</option>
+                                <option value="iced_latte">Iced Latte</option>
+                                <option value="iced_cappuccino">Iced Cappuccino</option>
+                                <option value="iced_mocha">Iced Mocha</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    <!-- datalist tag is used to provide a list of options for an input field -->
+<!--                     <p>
+                        <label for="coffee">Favorite Coffee:</label> 
+                        <input type="text" name="coffee" id="coffee" list="coffeeList"> 
+                        <datalist id="coffeeList"> 
+                            <option value="Espresso"> 
+                            <option value="Americano">
+                            <option value="Latte">
+                            <option value="Cappuccino">
+                            <option value="Mocha">
+                            <option value="Iced Espresso">
+                            <option value="Iced Americano">
+                            <option value="Iced Latte">
+                            <option value="Iced Cappuccino">
+                            <option value="Iced Mocha">
+                        </datalist>
+                    </p> -->
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>What is your favorite food?</legend>
+                        <p>
+                            <input type="radio" name="food" id="steak" value="steak" required> <!-- radio buttons are used when you want the user to select only one option from a list -->
+                            <label for="steak">Steak</label> 
+                        </p>
+                        <p>
+                            <input type="radio" name="food" id="chicken" value="chicken" required> 
+                            <label for="chicken">Chicken</label> 
+                        </p>
+                        <p>
+                            <input type="radio" name="food" id="xiaolongbao" value="xiaolongbao" required> 
+                            <label for="xiaolongbao">Xiaolongbao</label> 
+                        </p>
+                        <p>
+                            <input type="radio" name="food" id="other" value="other" required> 
+                            <label for="other">Other</label> 
+                        </p>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Do you have pets?</legend>
+                        <p>
+                            <input type="checkbox" name="pets" id="dog" value="dog"> <!-- checkbox is used when you want the user to select multiple options from a list -->
+                            <label for="dog">Dog</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="pets" id="cat" value="cat"> 
+                            <label for="cat">Cat</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="pets" id="bird" value="bird"> 
+                            <label for="bird">Bird</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="pets" id="duck" value="duck"> 
+                            <label for="duck">Duck</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="pets" id="otherPet" value="otherPet"> 
+                            <label for="otherPet">Other</label> <!-- The id must not be the same as it was already used in the radio button-->
+                        </p>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Any Feedback?</legend>
+                        <label for="message">Your Message:</label> 
+                        <br>
+                        <textarea name="message" id="message" rows="5" cols="40" placeholder="Your message here"></textarea> <!-- textarea tag is used to create a multi-line text input field; rows attribute is the number of visible text lines; cols attribute is the visible width of the text area -->
+                    </fieldset>
+                    <br>
+                    <button type="submit">Submit (GET)</button>
+                    <button type="submit" formaction="https://postman-echo.com/post" formmethod="post">Submit (POST)</button> <!-- this button will override the form's action and method attributes -->
+                    <button type="reset">Reset</button>
+                </form>
+            </article>
+        </main>
+
+        <hr>
+        <footer> <!-- footer tag is a block level element that provides semantic meaning --> 
+            <p>
+                &lt;&lt;&lt; &copy; <a href="about.html">2025 Fritz Gayas></a> &gt;&gt;&gt; <!-- this is how you put special characters in html; this is a relative reference -->
+            </p> 
+            <p> 
+                <a href="#">Back to Top</a>
+            </p>
+        </footer>
+    </body>
+
+</html> <!-- html closing tag -->
+
+<!-- Note: The purpose of the sematic tags (e.g. article, section, header, main, footer) is to change how the browser interprets and for the benefit of assistive technologies-->
+<!-- Using Postman Echo instead of httpbin in the buttons because httpbin.org may be blocked or unreachable on some networks. -->
