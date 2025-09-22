@@ -16,7 +16,10 @@ Welcome to this **HTML Project for Beginners** — a hands-on implementation des
    - [HTML Crash Course (YouTube)](https://youtu.be/kUMe1FH4CHE?si=g7MucaiKafDsE0sM)  
 
 3. **Check this repo if you’re stuck**  
-   Come back here to compare your solution or resolve any syntax/implementation issues.  
+   Come back here to compare your solution or resolve any syntax/implementation issues.
+
+4. **Validate by File Upload**
+   Upload your HTML file directly to the [Markup Validation Service](https://validator.w3.org/) to verify its markup validity.
 
 Enjoy the learning process! 🎉  
 
