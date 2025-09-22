@@ -1,0 +1,99 @@
+<html lang="en">
+    <head>
+        <title>The Little Taco Shop</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Fritz Gayas">
+        <meta name=description content="HTML Project to showcase accumulation of concepts learned">
+        <link href="/htmlFunProject/favicon.ico" rel="icon">
+        <link href="/htmlFunProject/css/style.css" rel="stylesheet" title="Provided Style">
+    </head>
+
+    <body>
+    <h1>Welcome to The Little Taco Shop</h1>
+    <nav> 
+        <ul>
+            <!-- the a href points to a relative link or absolute link; under <a> of MDN -->
+            <!-- a href is for navigation, while link href is for fetching external resources like CSS file-->
+            <li><a href="#LTS_Section">About LTS</a></li> 
+            <li><a href="#Menu_Section">Our Menu</a></li>
+            <li><a href="hours.html">Store Hours</a></li>
+            <li><a href="contact.html">Contact Us</a></li> 
+        </ul>
+    </nav>
+    <!-- under <figure> of MDN -->
+    <figure>
+        <img src="/htmlFunProject/img/tacos_and_drink_400x267.png" alt="Tacos and a Drink prepared by LTS" length="400" height="267"/>
+        <figcaption>Tacos and a Drink</figcaption>
+    </figure>
+    <hr> <!-- Horizontal Rule for separation -->
+    <section id="LTS_Section">
+        <h2>About <abbr title="Little Taco Shop">LTS</abbr></h2> 
+        <!-- under <abbr> Providing an expansion of MDN -->
+        <!-- under <b> element of MDN which also highlighted <strong>, <em>, or <mark> elements. -->
+        <p><abbr title="Little Taco Shop">LTS</abbr> was founded in 2022. Our shop was built from a <b>love of tacos</b> 🌮🌮🌮. We hope our shop adds a unique and interesting place to our little town.</p>
+    </section>
+    <section>
+        <h3>Taco Trivia</h3> <!-- Prolly an <h3> element coz of the size-->
+        <details> <!-- This is the clickable question -->
+            <summary>When did tacos first appear in the United States?</summary> 
+            <p>The Taco was first introduced to the United States in 1905.</p>
+        </details>
+    </section>
+    <hr> <!-- Horizontal Rule for separation -->
+    <section id="Menu_Section">
+    <h2>Our Menu</h2>
+        <table>
+            <thead> <!-- Table Header -->
+                <tr>
+                    <caption>Our Tacos</caption>
+                </tr>
+                <tr>
+                    <th scope="col">Tacos</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody> <!-- Table Body -->
+                <tr> <!-- 1st row Crunchy -->
+                    <th scope="row" rowspan="3">Crunchy</th>
+                    <td>1</td>
+                    <td>$1.50</td> 
+                </tr> 
+                <tr> <!-- 2nd row Cruncy -->
+                    <td>2</td>
+                    <td>$2.50</td>
+                </tr>
+                <tr> <!-- 3rd row Cruncy -->
+                    <td>3</td>
+                    <td>$3.25</td>
+                </tr>
+                <tr> <!-- 1st row Soft -->
+                    <th scope="row" rowspan="3">Soft</th>
+                    <td>1</td>
+                    <td>$2.00</td>
+                </tr>
+                <tr> <!-- 2nd row Soft -->
+                    <td>2</td>
+                    <td>$3.50</td>
+                </tr>
+                <tr> <!-- 3rd row Soft -->
+                    <td>3</td>
+                    <td>$4.50</td>
+                </tr>
+            </tbody>
+            <tfoot> <!-- Table Footer for semantics -->
+                <tr>
+                    <td scope="row" colspan="3">Chips & Salsa $2</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    <br>
+    <p><a href="#top">Back to Top</a></p>
+    <hr> <!-- Horizontal Rule for separation -->
+    </body>
+    
+    <footer>
+    <p> Copyright &copy; The Little Taco Shop</p> <!-- &copy for the Copyright Symbol-->
+    </footer>
+</html>

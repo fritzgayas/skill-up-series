@@ -1,0 +1,70 @@
+<html lang="en">
+    </head>
+        <head>
+        <title>Little Taco Shop Hours</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Fritz Gayas">
+        <meta name=description content="Webpage for LTS Hours">
+        <link href="/htmlFunProject/favicon.ico" rel="icon">
+        <link href="/htmlFunProject/css/style.css" rel="stylesheet" title="Provided Style">
+    </head>
+
+    <body>
+    <h1>Contact Us</h1>
+    <nav> 
+        <ul>
+            <!-- the a href points to a relative link or absolute link; under <a> of MDN -->
+            <!-- a href is for navigation, while link href is for fetching external resources like CSS file-->
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="index.html#LTS_Section">About LTS</a></li> <!-- how do you go directly to the section for another html page-->
+            <li><a href="index.html#Menu_Section">Our Menu</a></li>
+            <li><a href="hours.html">Store Hours</a></li> 
+        </ul>
+    </nav>
+    <!-- under <figure> of MDN -->
+    <section>
+        <figure>
+            <img src="/htmlFunProject/img/tacos_close_up_400x260.png" alt="Best-seller tacos prepared by LTS" length="400" height="260"/>
+            <figcaption>Little Taco Shop Tacos</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h2>Our Contact Form</h2>
+        <!-- Under <form> element of MDN -->
+        <!-- [subsitute for <form method="post">] -->
+        <form action="https://postman-echo.com/get" method="get">
+            <fieldset>
+                <legend>Send Us A Message</legend>
+                <p>
+                    <label for="name">Name:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="your name" required/>
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="emailAddress" name="emailAddress" placeholder="your email" required/>
+                </p>
+                <p>
+                    <label for="message">Your Message:<br></label>
+                    <textarea name="message" id="message" rows="10" columns="100" placeholder="Type your message here" required></textarea>
+                </p>
+            </fieldset>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </section>
+    <section>
+        <h2>Our Location</h2>
+        <address>
+            555 Taco Temptation Lane, Suite T<br>
+            Kansas City, MO 55555-5555
+        </address>
+        <p>Phone: <a href="tel:+555-555-5555">555-555-5555</a></p>
+    </section>
+    <p><a href=#Top>Back to Top</a></p>
+    <hr> <!-- horizontal rule for separation -->
+    </body>
+
+    <footer>
+        <p>Copyright &copy; The Little Taco Shop</p>
+    </footer>
+</html>
