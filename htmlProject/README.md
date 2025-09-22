@@ -7,18 +7,18 @@ Welcome to this **HTML Project for Beginners** — a hands-on implementation des
 
 ## 🚀 How to Use This Repository  
 
-1. **Try it yourself first**  
+1. **Try it yourself first**<br>
    Attempt the challenge described below before looking at the code implemented. The challenge was developed by Dave Grey from freeCodeCamp.  
 
-2. **Use external resources**  
+2. **Use external resources**<br>
    Feel free to consult documentation and tutorials:  
    - [MDN HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)  
    - [HTML Crash Course (YouTube)](https://youtu.be/kUMe1FH4CHE?si=g7MucaiKafDsE0sM)  
 
-3. **Check this repo if you’re stuck**  
+3. **Check this repo if you’re stuck**<br>
    Come back here to compare your solution or resolve any syntax/implementation issues.
 
-4. **Validate by File Upload**
+4. **Validate by File Upload**<br>
    Upload your HTML file directly to the [Markup Validation Service](https://validator.w3.org/) to verify its markup validity.
 
 Enjoy the learning process! 🎉  
