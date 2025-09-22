@@ -8,3 +8,18 @@ This repository brings together resources from tutorials, documentation, and my 
 Whether you're just starting out or brushing up your knowledge, this series is designed to guide you how and why different elements, attributes, and many more are utilized.
 
 I’ll be updating this repository regularly with new topics and projects, so stay tuned! 🌟
+
+---
+
+## 📚 References & Resources
+Here are some of the main resources that helped shape this series:
+#### 🔹 HTML References
+- [MDN Web Docs – HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)  
+- [HTML Crash Course – YouTube](https://youtu.be/kUMe1FH4CHE?si=g7MucaiKafDsE0sM)  
+- [W3C HTML Validator](https://validator.w3.org/)  
+
+#### 🔹 Pytest References
+- [Pytest Official Documentation](https://docs.pytest.org/en/stable/index.html)  
+- [Pytest Crash Course – YouTube](https://youtu.be/cHYq1MRoyI0?si=ZgxKSfRyj3PQxgcB)  
+
+---
