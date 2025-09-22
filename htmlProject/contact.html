@@ -1,6 +1,6 @@
+<!DOCTYPE html>
 <html lang="en">
-    </head>
-        <head>
+    <head>
         <title>Little Taco Shop Contact</title>
         <meta charset="UTF-8">
         <meta name="author" content="Fritz Gayas">
@@ -10,6 +10,7 @@
     </head>
 
     <body>
+    <section>
     <h1>Contact Us</h1>
     <nav> 
         <ul>
@@ -22,9 +23,8 @@
         </ul>
     </nav>
     <!-- under <figure> of MDN -->
-    <section>
         <figure>
-            <img src="/htmlProject/img/tacos_close_up_400x260.png" alt="Best-seller tacos prepared by LTS" length="400" height="260"/>
+            <img src="/htmlProject/img/tacos_close_up_400x260.png" alt="Best-seller tacos prepared by LTS" width="400" height="260">
             <figcaption>Little Taco Shop Tacos</figcaption>
         </figure>
     </section>
@@ -36,16 +36,16 @@
             <fieldset>
                 <legend>Send Us A Message</legend>
                 <p>
-                    <label for="name">Name:</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="your name" required/>
+                    <label for="fullName">Name:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="your name" required>
                 </p>
                 <p>
-                    <label for="email">Email:</label>
-                    <input type="email" id="emailAddress" name="emailAddress" placeholder="your email" required/>
+                    <label for="emailAddress">Email:</label>
+                    <input type="email" id="emailAddress" name="emailAddress" placeholder="your email" required>
                 </p>
                 <p>
                     <label for="message">Your Message:<br></label>
-                    <textarea name="message" id="message" rows="10" columns="100" placeholder="Type your message here" required></textarea>
+                    <textarea name="message" id="message" rows="10" cols="30" placeholder="Type your message here" required></textarea>
                 </p>
             </fieldset>
             <button type="submit">Submit</button>
@@ -62,9 +62,9 @@
     </section>
     <p><a href=#Top>Back to Top</a></p>
     <hr> <!-- horizontal rule for separation -->
-    </body>
 
     <footer>
         <p>Copyright &copy; The Little Taco Shop</p>
     </footer>
+    </body>
 </html>

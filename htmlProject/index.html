@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>The Little Taco Shop</title>
@@ -22,7 +23,7 @@
     </nav>
     <!-- under <figure> of MDN -->
     <figure>
-        <img src="/htmlProject/img/tacos_and_drink_400x267.png" alt="Tacos and a Drink prepared by LTS" length="400" height="267"/>
+        <img src="/htmlProject/img/tacos_and_drink_400x267.png" alt="Tacos and a Drink prepared by LTS" width="400" height="267">
         <figcaption>Tacos and a Drink</figcaption>
     </figure>
     <hr> <!-- Horizontal Rule for separation -->
@@ -43,10 +44,8 @@
     <section id="Menu_Section">
     <h2>Our Menu</h2>
         <table>
-            <thead> <!-- Table Header -->
-                <tr>
-                    <caption>Our Tacos</caption>
-                </tr>
+            <caption>Our Tacos</caption>
+            <thead> <!-- Table Header --> 
                 <tr>
                     <th scope="col">Tacos</th>
                     <th scope="col">Qty</th>
@@ -83,7 +82,7 @@
             </tbody>
             <tfoot> <!-- Table Footer for semantics -->
                 <tr>
-                    <td scope="row" colspan="3">Chips & Salsa $2</td>
+                    <td colspan="3">Chips & Salsa $2</td>
                 </tr>
             </tfoot>
         </table>
@@ -91,9 +90,9 @@
     <br>
     <p><a href="#top">Back to Top</a></p>
     <hr> <!-- Horizontal Rule for separation -->
-    </body>
     
     <footer>
     <p> Copyright &copy; The Little Taco Shop</p> <!-- &copy for the Copyright Symbol-->
     </footer>
+    </body>
 </html>
