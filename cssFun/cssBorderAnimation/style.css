@@ -1,0 +1,104 @@
+/* ---------- Global Reset ---------- */
+/* Remove default padding/margins and set box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Body Styling ---------- */
+body {
+    height: 100vh; /* Take up full viewport height */
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    background: #0f111a; /* Dark background for high contrast */
+    font-family: "Segoe UI", Arial, sans-serif; /* Clean modern font */
+    color: #dcdcdc; /* Light gray text for readability */
+}
+
+/* ---------- Card Styling ---------- */
+.card {
+    position: relative; /* Needed for ::before and ::after positioning */
+    width: 400px;
+    padding: 2em;
+    background: #1c1f2b; /* Dark surface color */
+    text-align: center;
+    border-radius: 12px; /* Smooth rounded corners */
+    z-index: 0; /* Ensure card stays above pseudo-element borders */
+}
+
+/* Card title styling */
+.card h2 {
+    margin-bottom: 1em;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Card paragraph styling */
+.card p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    color: #cfcfcf;
+}
+
+/* ---------- Custom Property ---------- */
+/* --angle is a dynamic property that will be animated */
+/* @property allows type-safe animation of custom properties */
+@property --angle {
+    syntax: "<angle>";   /* Restrict values to angles (e.g., deg, rad) */
+    initial-value: 0deg; /* Starting angle */
+    inherits: false;     /* Do not inherit from parent */
+}
+
+/* ---------- Gradient Border Effect ---------- */
+/* Both ::after and ::before create layered gradient borders */
+.card::after,
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* Fills the card area (top:0; right:0; bottom:0; left:0) */
+    border-radius: 12px; /* Matches the card’s rounded corners */
+    padding: 3px; /* Thickness of the gradient border */
+
+    /* Animated conic gradient that spins */
+    background-image: conic-gradient(
+        from var(--angle),
+        #ff4545,
+        #00ff99,
+        #006aff,
+        #ff0095,
+        #ff4545 /* repeat start for smooth loop */
+    );
+
+    /* Masking ensures gradient only shows as border */
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+
+    /* Exclude center area so only border glows */
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    /* Apply spin animation continuously */
+    animation: spin 3s linear infinite;
+}
+
+/* ---------- Glow Effect Layer ---------- */
+/* ::before is blurred to create a glow behind the sharp border (::after) */
+.card::before {
+    filter: blur(1.5rem);
+    opacity: 0.6; /* Softer glow effect */
+}
+
+/* ---------- Keyframes for Animation ---------- */
+/* Rotate --angle from 0 to 360 degrees to animate gradient */
+@keyframes spin {
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
+}

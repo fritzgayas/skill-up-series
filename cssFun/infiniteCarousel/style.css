@@ -1,0 +1,43 @@
+/* === Carousel Container === */
+.carousel {
+    margin: 50px auto;
+    width: 75em;                /* 6 cards × (12em + gap) approx */
+    overflow: hidden;           /* Hide overflow content */
+    display: flex;
+    border: 2px solid #ccc;     /* For debugging (remove later) */
+}
+
+/* === Group (one set of logos) === */
+.group {
+    display: flex;
+    gap: 1.5em;                 /* Space between logos */
+    animation: spin 15s infinite linear;
+    padding-right: 1.5em;
+}
+
+/* === Card / logo container === */
+.card {
+    flex: 0 0 12em;             /* Each card width fixed */
+    height: 12em;               /* Fixed height */
+    background: white;
+    border-radius: 1.5em;        /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;             /* Small boundary inside each card */
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* === Logo images === */
+.card img {
+    width: 100%;                /* Fill available space */
+    height: 100%;
+    object-fit: contain;        /* Keep aspect ratio */
+}
+
+/* === Smooth Infinite Scroll === */
+@keyframes spin {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
+}
