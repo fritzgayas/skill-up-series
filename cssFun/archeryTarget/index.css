@@ -1,0 +1,86 @@
+/* 
+    Define reusable custom properties (CSS variables).
+    This avoids repetition and makes color changes easier.
+*/
+:root {
+    --black: #282828;
+    --blue: #2892f9;
+    --red: #fb2f27;
+    --yellow: #fdfe29;
+}
+
+/* 
+    Reset margin and padding for <html> and <body> to 
+    remove default browser spacing and allow full control.
+*/
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+    FLEXBOX
+    - .rings (outermost container) fills 100vh (viewport height).
+    - display: flex makes it a flex container.
+    - justify-content: center + align-items: center perfectly centers 
+      its children (the first black circle) both horizontally & vertically.
+    
+    We also apply the same flex rules to every nested .ring, 
+    so each smaller ring gets auto-centered inside the parent.
+*/
+.rings, .ring {
+    height: 100vh; /* Only matters for .rings (outer container). 
+                      Nested .ring sizes are overridden below. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+    Makes every .ring a perfect circle.
+    (50% of width/height => fully rounded).
+    It becomes a square if border-radius is set to 5%.
+*/
+.ring {
+    border-radius: 50%;
+}
+
+/* 
+    OUTER RING (Black)
+    - Largest circle, 200px x 200px
+*/
+.ring-1 {
+    height: 200px;
+    width: 200px;
+    background: var(--black);
+}
+
+/* 
+    SECOND RING (Blue)
+    - Slightly smaller, sits inside .ring-1
+*/
+.ring-2 {
+    height: 150px;
+    width: 150px;
+    background: var(--blue);  
+}
+
+/* 
+    THIRD RING (Red)
+    - Smaller than .ring-2
+*/
+.ring-3 {
+    height: 100px;
+    width: 100px;
+    background: var(--red);  
+}
+
+/* 
+    CENTER (Bullseye - Yellow)
+    - Smallest circle, exactly in the middle.
+*/
+.bullseye {
+    height: 50px;
+    width: 50px;
+    background: var(--yellow);
+}

@@ -1,0 +1,16 @@
+Build an Archery Target 
+Link: https://youtu.be/TzuWIHGFKCQ?si=3BDn6CTJndB2w5-z
+
+- Match the example
+- Center on the page
+- No need to make responsive
+- Hint: 
+> There are four circles layered on top of one another.
+> Each circle is centered within a larger circle.
+
+✅ CSS Concepts Learned in this Mini Project
+1. Flexbox for Centering → The simplest, modern way to center elements both horizontally and vertically.
+2. Nesting Divs → Creates a natural “target” effect without absolute positioning.
+3. CSS Variables → Clean, reusable, and easy-to-maintain color system.
+4. Border-Radius: 50% → Core trick to turn any square into a circle.
+5. Viewport Height (vh) → Helps fill the page and center objects relative to the entire screen.

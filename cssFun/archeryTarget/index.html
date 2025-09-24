@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Archery Target</title>
+        <!-- 
+            Linking to external stylesheet (index.css) 
+            so we keep structure (HTML) and presentation (CSS) separate.
+        -->
+        <link rel="stylesheet" href="index.css">
+    </head>
+    
+    <body>
+        <!-- 
+            Parent container for the target. 
+            Each nested <div> represents one ring of the target. 
+            By nesting, we ensure automatic centering of the inner rings inside the larger ones.
+        -->
+        <div class="rings">
+            <!-- Outer black circle -->
+            <div class="ring ring-1">
+                <!-- Blue circle -->
+                <div class="ring ring-2">
+                    <!-- Red circle -->
+                    <div class="ring ring-3">
+                        <!-- Center bullseye (yellow) -->
+                        <div class="ring bullseye">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+Build a Word Carousel
+Link: https://youtu.be/TzuWIHGFKCQ?si=3BDn6CTJndB2w5-z
+
+- Match styles
+- Personalize - display 4 things you love
+- Words should rotate in an infinite loop
+- No JavaScript!
+- Hints:
+> You can define the steps of an animation in keyframes using percentages, with 0% being the beginning of the animation and 100% being the end of the animation!
+> Think about how you can use a pseudo element's content property to swap words.
+
+✅ CSS Concepts Learned in this Project
+1. Pseudo-elements (::after) → Great for inserting decorative or dynamic content without polluting HTML.
+2. CSS content property → Lets you insert text or symbols directly from CSS.
+3. Keyframes (@keyframes) → Define how properties change over time (from 0% → 100%).
+4. Animation Loop (infinite) → Ensures the words cycle forever.
+5. Semantic HTML advantage → Keeps <h1>I love</h1> simple, while CSS controls the rotating word.

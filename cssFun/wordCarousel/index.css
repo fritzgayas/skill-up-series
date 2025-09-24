@@ -1,0 +1,78 @@
+/* 
+    Reset default browser spacing for consistency.
+*/
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+    Use CSS variable for background color of the word "badge".
+    In design/UX, a badge is a small, highlighted label that draws attention.
+    Makes it easy to change theme later.
+*/
+:root {
+    --bg-word: #5134ff;
+}
+
+/* 
+    Center container using Flexbox.
+    - height: 100vh makes it full viewport height.
+    - justify-content + align-items centers the <h1> perfectly.
+*/
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+    ::AFTER
+    - Instead of writing words inside HTML, we use ::after 
+      to generate text dynamically with 'content'.
+    - This keeps HTML semantic and allows CSS to control animation.
+*/
+h1::after {
+    /* Empty to start, animation will insert content dynamically */
+    content: "";
+
+     /* Apply infinite animation called "swap" (defined below) */
+    animation: 6s swap infinite;
+
+    /* Styling the word badge */
+    background: var(--bg-word);
+    padding: 10px;
+    color: white;
+    border-radius: 4px;
+    margin-left: 4px; /* spacing between "I love" and the word */
+}
+
+/* 
+    KEYFRAMES ANIMATION
+    - We define how the pseudo-element’s content changes over time.
+    - Percentages represent the progress of the animation cycle.
+    - At 0%, 25%, 50%, 75%, 100% → different words show up.
+    - At 100%, we loop back to the first word ("blue") for a smooth cycle.
+*/
+@keyframes swap {
+    0% {
+        content: "blue";
+    }
+
+    25% {
+        content: "math";
+    }
+    
+    50% {
+        content: "yogurt";
+    }
+
+    75% {
+        content: "traveling";
+    }
+
+    100% {
+        content: "blue"; /* loop back to first word */
+    }
+}
