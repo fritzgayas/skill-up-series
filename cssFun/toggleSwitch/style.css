@@ -1,0 +1,53 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #dca502;
+}
+
+:root {
+    --toggle-bg: #e2ddce;              /* Background behind toggle */
+    --toggle-switch-bg: #232428;       /* Circle + inner bg */
+    --toggle-border: #232428;          /* Border color */
+    --toggle-circle: 120px;            /* Circle diameter */
+    --toggle-width: 500px;             /* Total width of toggle */
+    --toggle-transition: 0.5s;         /* Animation duration */
+}
+
+.toggle-wrap {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hide the checkbox (but keep it clickable through the label) */
+.toggle-input {
+    display: none;
+}
+
+/* Toggle container (label is clickable area) */
+label {
+    display: flex;
+    align-items: center;
+    width: var(--toggle-width);
+    height: var(--toggle-circle);
+    border: 3px solid var(--toggle-border);
+    border-radius: 40px;
+    padding: 0.25em;
+    background: var(--toggle-bg);
+    cursor: pointer; /* Pointer on hover */
+}
+
+/* The moving circle */
+.toggle-switch {
+    height: var(--toggle-circle);
+    width: var(--toggle-circle);
+    background: var(--toggle-switch-bg);
+    border-radius: 50%;
+    transition: all var(--toggle-transition);
+}
+
+/* When input is checked, move circle to the right */
+.toggle-input:checked ~ .toggle-switch {
+    transform: translateX(calc(var(--toggle-width) - var(--toggle-circle)));
+}

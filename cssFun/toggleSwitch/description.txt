@@ -1,0 +1,17 @@
+Build a Toggle Switch
+Link: https://youtu.be/TzuWIHGFKCQ?si=3BDn6CTJndB2w5-z
+
+- On click, toggle switch moves from one side to another
+- Cursor becomes a pointer
+- Match styles
+- No JavaScript
+- Hint: 
+> If you hide the checkbox, you'll still be able to style and toggle back and forth between input:checked and input:unchecked pseudo classes by clicking on the checkbox label
+> Use a sibling selector to style the .toggle-switch class when the input is :checked or :unchecked
+
+✅ CSS Concepts Learned in this Project
+1. Hidden Inputs (display: none) → Lets us remove the checkbox visually, but keep it interactive through its label.
+2. Sibling Selector (~) → Allows us to style the .toggle-switch when the input:checked state changes.
+3. CSS Variables (--var) → Make the toggle dimensions, colors, and timings easy to update.
+4. Flexbox (display: flex) → Centers the toggle switch neatly in the middle of the page.
+5. Cursor Styling (cursor: pointer) → Improves UX by showing that the toggle is clickable.
