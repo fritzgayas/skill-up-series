@@ -3,7 +3,9 @@ body, html {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* center vertically */
+    height: 100vh;             /* make body take full screen height */
 }
 
 /* CSS variables for reusability and easy theme changes */
