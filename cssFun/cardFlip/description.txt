@@ -1,0 +1,18 @@
+Build a Card Flip
+Link: https://youtu.be/TzuWIHGFKCQ?si=3BDn6CTJndB2w5-z
+
+- Card has two sides, and flips from front to back on hover
+- Match styles as closely as you can 
+- CSS only
+- Don't worry about responsiveness
+- Hints:
+> A card flip is essentially an element rotating 180 degrees in 3D space. Use .card-container class to create the flip effect, then show and hide the front and back content as the card flips
+> Use the transition property for a smooth flip
+> The CSS properties transform-style: preserve-3d and backface-visibility will help you along the way
+
+✅ CSS Concepts Learned in this Project
+1. transform-style: preserve-3d → Keeps child elements in 3D space so the flip looks real.
+2. transition → Smoothly animates the rotation when hovering.
+3. rotateY(180deg) → Rotates the element horizontally to create the flip effect.
+4. backface-visibility → Prevents the back text from showing through the front.
+5. display toggle on hover → Swaps visibility between .card-front and .card-back.

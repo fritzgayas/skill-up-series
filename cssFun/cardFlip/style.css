@@ -1,0 +1,66 @@
+/* Reset default margins and center content horizontally */
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* CSS variables for reusability and easy theme changes */
+:root {
+    --card-bg: #FFB347;   /* warm pastel orange */
+    --font-color-main: #1c1c1c;
+}
+
+/* The container for the card
+   - sets width/height
+   - enables 3D transformations
+   - allows smooth transitions
+   - pointer cursor for interactivity */
+.card-container {
+    width: 350px;
+    height: 200px;
+    background: var(--card-bg);
+    color: var(--font-color-main);
+    padding: 2em;
+    margin: 2em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* Smooth animation when flipping */
+    transition: transform 0.5s;
+
+    /* Allows nested elements to be transformed in 3D */
+    transform-style: preserve-3d;
+
+    cursor: pointer;
+}
+
+/* Flip the card on hover (rotate around Y axis) */
+.card-container:hover {
+    transform: rotateY(180deg);
+}
+
+/* Initially hides the back content */
+.card-back {
+    display: none;
+}
+
+/* When hovered, front face disappears */
+.card-container:hover .card-front {
+    display: none;
+}
+
+/* When hovered, back face appears and flips */
+.card-container:hover .card-back {
+    display: block;
+    transform: rotateY(180deg);
+}
+
+/* Ensures hidden side is not visible when rotated */
+.card-front, .card-back {
+    backface-visibility: hidden;
+}
