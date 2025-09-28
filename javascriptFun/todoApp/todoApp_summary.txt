@@ -1,0 +1,26 @@
+Todo App - Summary
+
+This project is a simple Todo application built with HTML, CSS, and JavaScript.
+It allows users to:
+- Add tasks with categories (Work, Study, Personal, Other)
+- Mark tasks as done or undo them
+- Delete tasks
+- Filter tasks by category
+- Persist tasks using localStorage (data remains after page reload)
+
+JavaScript Concepts Learned:
+1. DOM Manipulation:
+   - Creating, updating, and deleting elements dynamically (document.createElement, appendChild, innerHTML).
+2. Event Handling:
+   - Handling button clicks and select input changes using onclick and onchange events.
+3. State Management:
+   - Using arrays of objects to represent tasks with id, text, category, and done status.
+4. Local Storage:
+   - Saving and retrieving JSON data with localStorage.setItem() and localStorage.getItem().
+   - Defensive parsing with JSON.parse and error handling.
+5. Conditional Rendering:
+   - Filtering tasks based on selected category.
+   - Applying conditional styles for completed tasks.
+6. Best Practices:
+   - Input validation (preventing empty tasks).
+   - Clean UI with CSS styling and separate styles for delete button.

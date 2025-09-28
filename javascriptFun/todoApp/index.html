@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #d4fc79, #96e6a1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #444;
+    }
+
+    input, select, button {
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+
+    button {
+      background: #96e6a1;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #82cf8c;
+    }
+
+    .delete-btn {
+      background: #ff6666 !important;
+    }
+    .delete-btn:hover {
+      background: #e05555 !important;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f5f5f5;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .done {
+      text-decoration: line-through;
+      color: #777;
+    }
+
+    .category {
+      font-size: 0.8em;
+      color: #555;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Todo App</h1>
+
+    <!-- Input fields -->
+    <input id="taskInput" type="text" placeholder="Enter task..." />
+    <select id="categoryInput">
+      <option value="Work">Work</option>
+      <option value="Study">Study</option>
+      <option value="Personal">Personal</option>
+      <option value="Other">Other</option>
+    </select>
+    <button onclick="addTask()">Add Task</button>
+
+    <!-- Filters -->
+    <h3>Filter by Category</h3>
+    <select id="filter" onchange="render()">
+      <option value="All">All</option>
+      <option value="Work">Work</option>
+      <option value="Study">Study</option>
+      <option value="Personal">Personal</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <!-- Todo list -->
+    <h3>Tasks</h3>
+    <ul id="list"></ul>
+  </div>
+
+  <script>
+    // Defensive localStorage parsing
+    let tasks;
+    try {
+      tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    } catch (e) {
+      tasks = [];
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    // Save to localStorage
+    function saveTasks() {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    // Add a new task
+    function addTask() {
+      const taskInput = document.getElementById("taskInput");
+      const categoryInput = document.getElementById("categoryInput");
+      const text = taskInput.value.trim();
+      const category = categoryInput.value;
+
+      if (!text) {
+        alert("⚠️ Please enter a valid task description.");
+        return;
+      }
+
+      tasks.push({ 
+        id: Date.now(), 
+        text, 
+        category, 
+        done: false 
+      });
+
+      saveTasks();
+      render();
+
+      taskInput.value = "";
+    }
+
+    // Toggle task completion
+    function toggleTask(id) {
+      tasks = tasks.map(t => 
+        t.id === id ? { ...t, done: !t.done } : t
+      );
+      saveTasks();
+      render();
+    }
+
+    // Delete a task
+    function deleteTask(id) {
+      tasks = tasks.filter(t => t.id !== id);
+      saveTasks();
+      render();
+    }
+
+    // Render the list based on filter
+    function render() {
+      const list = document.getElementById("list");
+      const filter = document.getElementById("filter").value;
+      list.innerHTML = "";
+
+      tasks
+        .filter(t => filter === "All" || t.category === filter)
+        .forEach(task => {
+          const li = document.createElement("li");
+
+          const span = document.createElement("span");
+          span.textContent = task.text;
+          if (task.done) span.classList.add("done");
+
+          const cat = document.createElement("span");
+          cat.textContent = `[${task.category}]`;
+          cat.className = "category";
+
+          const toggleBtn = document.createElement("button");
+          toggleBtn.textContent = task.done ? "Undo" : "Done";
+          toggleBtn.onclick = () => toggleTask(task.id);
+
+          const delBtn = document.createElement("button");
+          delBtn.textContent = "Delete";
+          delBtn.classList.add("delete-btn");
+          delBtn.onclick = () => deleteTask(task.id);
+
+          li.appendChild(span);
+          li.appendChild(cat);
+          li.appendChild(toggleBtn);
+          li.appendChild(delBtn);
+
+          list.appendChild(li);
+        });
+
+      // Keep current filter selected (don’t reset to All)
+      document.getElementById("filter").value = filter;
+    }
+
+    render();
+  </script>
+</body>
+</html>

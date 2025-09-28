@@ -1,0 +1,25 @@
+Expense Tracker - Summary
+
+This project is a simple Expense Tracker built with HTML, CSS, and JavaScript.
+It allows users to:
+- Add income/expense entries with description, category, and amount
+- View total expenses dynamically
+- See a list of all expenses
+- Persist data using localStorage (data remains after reload)
+- Visualize spending with a simple bar chart drawn using Canvas API
+
+JavaScript Concepts Learned:
+1. DOM Manipulation:
+   - Adding items dynamically to a list and updating totals in the UI.
+2. Event Handling:
+   - Handling form submissions and button clicks to add new expenses.
+3. Local Storage:
+   - Storing and retrieving expense data in JSON format.
+4. Data Aggregation:
+   - Summing values by category and calculating totals from stored data.
+5. Canvas API:
+   - Drawing a simple bar chart with rectangles and labels based on data values.
+6. State Management:
+   - Maintaining expenses as an array of objects and syncing with localStorage.
+7. Input Validation:
+   - Ensuring amount is positive and description is not empty.

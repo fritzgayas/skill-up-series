@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #fbc2eb, #a6c1ee);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #444;
+    }
+
+    input, select, button {
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+
+    button {
+      background: #a6c1ee;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #8da9d9;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    li {
+      background: #f5f5f5;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    canvas {
+      margin-top: 15px;
+      width: 100% !important;
+      max-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Expense Tracker</h1>
+    <input id="amount" type="number" placeholder="Amount (₱)" />
+    <input id="desc" type="text" placeholder="Description" />
+    <select id="category">
+      <option value="Food">Food</option>
+      <option value="Transportation">Transportation</option>
+      <option value="Shopping">Shopping</option>
+      <option value="Education">Education</option>
+      <option value="Others">Others</option>
+    </select>
+    <button onclick="addExpense()">Add Expense</button>
+
+    <h3>Expenses</h3>
+    <ul id="list"></ul>
+    <h3>Total: ₱<span id="total">0</span></h3>
+
+    <canvas id="chart"></canvas>
+  </div>
+
+  <script>
+    let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+
+    function render() {
+      const list = document.getElementById("list");
+      const totalEl = document.getElementById("total");
+      list.innerHTML = "";
+      let total = 0;
+      const categoryTotals = {};
+
+      expenses.forEach((exp, i) => {
+        total += exp.amount;
+        categoryTotals[exp.category] = (categoryTotals[exp.category] || 0) + exp.amount;
+
+        const li = document.createElement("li");
+        li.textContent = `${exp.category}: ₱${exp.amount} - ${exp.desc}`;
+        list.appendChild(li);
+      });
+
+      totalEl.textContent = total;
+
+      // Save to localStorage
+      localStorage.setItem("expenses", JSON.stringify(expenses));
+
+      drawChart(categoryTotals);
+    }
+
+    function addExpense() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const desc = document.getElementById("desc").value.trim();
+      const category = document.getElementById("category").value;
+
+      if (!amount || amount <= 0 || !desc) {
+        alert("Please enter valid amount and description");
+        return;
+      }
+
+      expenses.push({ amount, desc, category });
+      render();
+
+      // Clear inputs
+      document.getElementById("amount").value = "";
+      document.getElementById("desc").value = "";
+    }
+
+    function drawChart(data) {
+      const canvas = document.getElementById("chart");
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const categories = Object.keys(data);
+      const values = Object.values(data);
+
+      if (values.length === 0) return;
+
+      // Simple bar chart
+      const barWidth = canvas.width / values.length;
+      const maxVal = Math.max(...values);
+
+      values.forEach((val, i) => {
+        const barHeight = (val / maxVal) * canvas.height * 0.8;
+        ctx.fillStyle = ["#ff9999","#66b3ff","#99ff99","#ffcc99"][i % 4];
+        ctx.fillRect(i * barWidth, canvas.height - barHeight, barWidth - 10, barHeight);
+        ctx.fillStyle = "#333";
+        ctx.fillText(categories[i], i * barWidth + 5, canvas.height - 5);
+      });
+    }
+
+    render();
+  </script>
+</body>
+</html>
