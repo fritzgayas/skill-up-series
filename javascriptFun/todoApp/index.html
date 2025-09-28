@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Todo App</title>
   <style>
+    /* === General Page Styling === */
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(to bottom right, #d4fc79, #96e6a1);
@@ -14,6 +15,7 @@
       margin: 0;
     }
 
+    /* === Container Styling === */
     .container {
       background: white;
       padding: 20px;
@@ -27,6 +29,7 @@
       color: #444;
     }
 
+    /* === Input, Dropdown, Button Styling === */
     input, select, button {
       padding: 8px;
       margin: 5px 0;
@@ -46,6 +49,7 @@
       background: #82cf8c;
     }
 
+    /* === Delete Button Styling === */
     .delete-btn {
       background: #ff6666 !important;
     }
@@ -53,6 +57,7 @@
       background: #e05555 !important;
     }
 
+    /* === Task List Styling === */
     ul {
       list-style: none;
       padding: 0;
@@ -69,11 +74,13 @@
       border-radius: 6px;
     }
 
+    /* === Completed Task Style === */
     .done {
       text-decoration: line-through;
       color: #777;
     }
 
+    /* === Category Text Styling === */
     .category {
       font-size: 0.8em;
       color: #555;
@@ -85,7 +92,7 @@
   <div class="container">
     <h1>Todo App</h1>
 
-    <!-- Input fields -->
+    <!-- === Input Fields for New Task === -->
     <input id="taskInput" type="text" placeholder="Enter task..." />
     <select id="categoryInput">
       <option value="Work">Work</option>
@@ -95,7 +102,7 @@
     </select>
     <button onclick="addTask()">Add Task</button>
 
-    <!-- Filters -->
+    <!-- === Filter Dropdown === -->
     <h3>Filter by Category</h3>
     <select id="filter" onchange="render()">
       <option value="All">All</option>
@@ -105,13 +112,14 @@
       <option value="Other">Other</option>
     </select>
 
-    <!-- Todo list -->
+    <!-- === Todo List Display === -->
     <h3>Tasks</h3>
     <ul id="list"></ul>
   </div>
 
   <script>
-    // Defensive localStorage parsing
+    // === Initialize Global State ===
+    // Try to load tasks from localStorage, reset if corrupted
     let tasks;
     try {
       tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -120,37 +128,46 @@
       localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
-    // Save to localStorage
+    // Save tasks to localStorage
     function saveTasks() {
       localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
-    // Add a new task
+    /**
+     * addTask()
+     * Creates a new task object and adds it to the tasks array
+     */
     function addTask() {
       const taskInput = document.getElementById("taskInput");
       const categoryInput = document.getElementById("categoryInput");
       const text = taskInput.value.trim();
       const category = categoryInput.value;
 
+      // Validation: avoid empty tasks
       if (!text) {
         alert("⚠️ Please enter a valid task description.");
         return;
       }
 
+      // Add new task object
       tasks.push({ 
-        id: Date.now(), 
+        id: Date.now(),  // unique ID using timestamp
         text, 
         category, 
         done: false 
       });
 
-      saveTasks();
-      render();
+      saveTasks(); // Save changes
+      render();    // Refresh the UI
 
+      // Clear input field
       taskInput.value = "";
     }
 
-    // Toggle task completion
+    /**
+     * toggleTask(id)
+     * Marks a task as completed (done) or undo
+     */
     function toggleTask(id) {
       tasks = tasks.map(t => 
         t.id === id ? { ...t, done: !t.done } : t
@@ -159,53 +176,67 @@
       render();
     }
 
-    // Delete a task
+    /**
+     * deleteTask(id)
+     * Removes a task permanently from the tasks array
+     */
     function deleteTask(id) {
       tasks = tasks.filter(t => t.id !== id);
       saveTasks();
       render();
     }
 
-    // Render the list based on filter
+    /**
+     * render()
+     * Updates the displayed list of tasks based on filter selection
+     */
     function render() {
       const list = document.getElementById("list");
       const filter = document.getElementById("filter").value;
-      list.innerHTML = "";
+      list.innerHTML = ""; // Clear old tasks
 
+      // Filter and render tasks
       tasks
         .filter(t => filter === "All" || t.category === filter)
         .forEach(task => {
           const li = document.createElement("li");
 
+          // Task description
           const span = document.createElement("span");
           span.textContent = task.text;
-          if (task.done) span.classList.add("done");
+          if (task.done) span.classList.add("done"); // Style if completed
 
+          // Category label
           const cat = document.createElement("span");
           cat.textContent = `[${task.category}]`;
           cat.className = "category";
 
+          // Toggle Done/Undo button
           const toggleBtn = document.createElement("button");
           toggleBtn.textContent = task.done ? "Undo" : "Done";
           toggleBtn.onclick = () => toggleTask(task.id);
 
+          // Delete button
           const delBtn = document.createElement("button");
           delBtn.textContent = "Delete";
           delBtn.classList.add("delete-btn");
           delBtn.onclick = () => deleteTask(task.id);
 
+          // Build the list item
           li.appendChild(span);
           li.appendChild(cat);
           li.appendChild(toggleBtn);
           li.appendChild(delBtn);
 
+          // Add to list
           list.appendChild(li);
         });
 
-      // Keep current filter selected (don’t reset to All)
+      // Keep filter dropdown consistent (don’t reset to "All")
       document.getElementById("filter").value = filter;
     }
 
+    // === Initial Render on Page Load ===
     render();
   </script>
 </body>
