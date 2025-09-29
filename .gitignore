@@ -1,0 +1,10 @@
+# Ignore VSCode settings
+.vscode/
+
+# Ignore Selenium folder for now
+seleniumFun/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
