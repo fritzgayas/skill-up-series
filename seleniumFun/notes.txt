@@ -1,0 +1,9 @@
+TestCase
+Step 1: Open Browser
+Step 2: Enter URL 
+Step 3: Maximize Browser
+Step 4: 
+Enter data into textbox
+Click on radio button
+Click on Checkbox
+Click on Button
