@@ -1,0 +1,19 @@
+[STEPS]
+Test automation script
+- Launches a browser (Firefox) using Selenium.
+- Opens a web page (htmlFun/index.html).
+- Interacts with elements:
+> Enters text into textboxes.
+> Selects from a dropdown menu.
+> Clicks a radio button and a checkbox.
+> Submits the form using either GET or POST.
+- Simulates what a real user would do in the browser.
+
+[WHY DO IT?]
+- Automates Repetitive Tests
+- Cross-Browser Testing
+- Regression Testing
+
+Without Selenium: QA manually tests the website by clicking, typing, and submitting forms again and again → slow and error-prone.
+With Selenium: QA writes scripts once, and the browser tests itself → fast, consistent, repeatable.
+**Selenium is an open-source automation tool used for testing web applications.

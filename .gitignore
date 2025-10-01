@@ -2,7 +2,7 @@
 .vscode/
 
 # Ignore Selenium folder for now
-seleniumFun/
+# seleniumFun/
 
 # Ignore Python cache
 __pycache__/
