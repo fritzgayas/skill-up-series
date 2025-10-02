@@ -15,16 +15,23 @@
 #for i in range(1,11,2): # Start with 1, Stop at 11, Step of 2 or Increments of 2
 #    print(i)
 
-# D. For loop with decrement
+# D1. For loop with decrement
 
 #for i in range(10,1,-2): # It must have a negative Step value to implement the decrement
 #    print(i)
 
-# E. Print a reverse table by taking number from user
+# D2. Print a reverse table by taking number from user
 
-number = input("Please enter a number: ") #this is a string
+#number = input("Please enter a number: ") #this is a string
 
-for i in range(10,0,-1):
-    print(number + " * " + str(i) + " = " + str(int(number)*i))
-    #10 * 10 = 100
-    #10 * 9 = 90
+#for i in range(10,0,-1):
+#    print(number + " * " + str(i) + " = " + str(int(number)*i))
+
+# E. For loop with values in List or Tuple
+
+li=[15,54,21,25,76]
+z=0
+for i in li:
+    z=z+1
+
+print("Sum is " + str(z))
