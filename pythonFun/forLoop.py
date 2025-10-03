@@ -28,10 +28,10 @@
 #    print(number + " * " + str(i) + " = " + str(int(number)*i))
 
 # E. For loop with values in List or Tuple
-
+# >> Get the sum in the given list using for loo
 li=[15,54,21,25,76]
 z=0
 for i in li:
-    z=z+1
+    z=z+i 
 
 print("Sum is " + str(z))
