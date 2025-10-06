@@ -1,0 +1,50 @@
+# ============================================
+# 1_stringSorting
+# ============================================
+# Instruction:
+# Write a program that sorts the given string or array in ascending order.
+# You may also try descending order as an additional example.
+#
+# Key Concepts:
+# - String and array manipulation
+# - Sorting algorithms
+# - Use of sorted(), sort(), and manual sorting logic
+#
+# Examples:
+# 1. Given a string s = "dcab", sort it in ascending order.
+#    Expected Output: "abcd"
+# 2. Given a string s = "zebra", sort it in descending order.
+#    Expected Output: "zreba"
+# 3. Given a list arr = [4, 2, 9, 1], sort it in ascending order.
+#    Expected Output: [1, 2, 4, 9]
+# ============================================
+
+# --- Using Built-in Functions ---
+
+# Example 1: Sort string in ascending order
+s = "dcab"
+print(''.join(sorted(s)))  # Output: abcd
+
+# Example 2: Sort string in descending order
+s = "zebra"
+print(''.join(sorted(s, reverse=True)))  # Output: zreba
+
+# Example 3: Sort a list of numbers in ascending order
+arr = [4, 2, 9, 1]
+arr.sort()
+print(arr)  # Output: [1, 2, 4, 9]
+
+# ============================================
+# --- Manual Sorting Example (Bubble Sort) ---
+# ============================================
+# Bubble Sort works by repeatedly swapping adjacent elements if they are in the wrong order.
+
+arr_manual = [4, 2, 9, 1]
+n = len(arr_manual)
+
+for i in range(n):
+    for j in range(0, n - i - 1):
+        if arr_manual[j] > arr_manual[j + 1]:
+            arr_manual[j], arr_manual[j + 1] = arr_manual[j + 1], arr_manual[j]  # swap
+
+print(arr_manual)  # Output: [1, 2, 4, 9]
