@@ -1,0 +1,40 @@
+# ============================================
+# 4_findMaxMin
+# ============================================
+# Instruction:
+# Write a program that finds the maximum and minimum number in a list.
+# You may use Python's built-in functions or implement the logic manually using loops.
+#
+# Key Concepts:
+# - Array (list) traversal
+# - Using max() and min() functions
+# - Manual comparison to find max or min
+#
+# Examples:
+# 1. Given arr = [3, 7, 2, 9, 4], the maximum is 9 and the minimum is 2.
+#    Expected Output: Max = 9, Min = 2
+# 2. Given arr = [-5, -2, -9, -1], the maximum is -1 and the minimum is -9.
+#    Expected Output: Max = -1, Min = -9
+# ============================================
+
+# ============================================
+# Example 1: Using Built-in max() and min() functions
+# ============================================
+arr = [3, 7, 2, 9, 4]
+
+max_num = max(arr)  # Finds the largest number in the list
+min_num = min(arr)  # Finds the smallest number in the list
+
+print("Max:", max_num)  # Output: Max: 9
+print("Min:", min_num)  # Output: Min: 2
+
+# ============================================
+# Example 2: Using Built-in max() and min() with negative numbers
+# ============================================
+arr = [-5, -2, -9, -1]
+
+max_num = max(arr)
+min_num = min(arr)
+
+print("Max:", max_num)  # Output: Max: -1
+print("Min:", min_num)  # Output: Min: -9
