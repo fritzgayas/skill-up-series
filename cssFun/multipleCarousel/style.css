@@ -1,0 +1,145 @@
+:root {
+  --bg-color: #ffffff;
+  --snd-bg-color: #d5e9fd;
+  --text-color: #000000;
+  --main-color: #0077b6;
+}
+
+/* Global Layout */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 2rem;
+}
+
+.tech-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tech-section h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--main-color);
+}
+
+/* Tech Stack header */
+.tech-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tech-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 0.5rem;
+}
+
+.tech-header p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Category */
+.tech-category {
+  margin-bottom: 3rem;
+  background-color: var(--snd-bg-color);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.tech-category h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--main-color);
+  text-align: center;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  padding: 1em 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.group {
+  display: flex;
+  gap: 1.5em;
+  padding-right: 1.5em;
+  animation: spin 15s linear infinite;
+}
+
+.carousel:hover .group {
+  animation-play-state: paused;
+}
+
+/* Speeds */
+.small-group .group {
+  animation-duration: 10s;
+}
+
+.large-group .group {
+  animation-duration: 20s;
+}
+
+/* Cards */
+.card {
+  flex: 0 0 10em;
+  height: 10em;
+  background: var(--bg-color);
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Keyframes */
+@keyframes spin {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 8em;
+    height: 8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 0 0 6em;
+    height: 6em;
+    padding: 1em;
+  }
+
+  .tech-section h1 {
+    font-size: 2rem;
+  }
+
+  .tech-category h2 {
+    font-size: 1.2rem;
+  }
+}
