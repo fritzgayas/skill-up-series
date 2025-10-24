@@ -10,6 +10,7 @@
 #    Explanation: nums[0] + nums[1] = 2 + 7 = 9
 # 2. Input: nums = [3, 2, 4], target = 6 → Output: [1, 2]
 #    Explanation: nums[1] + nums[2] = 2 + 4 = 6
+# 3. Input: nums = [3, 3], target = 6 → Output: [0, 1]
 # ============================================
 
 # ============================================
@@ -32,7 +33,7 @@ for i in range(len(nums)):
 
 # if the loop completes without finding a match
 if not found:
-    print("No two numbers add up to the target.")
+    print("First approach. No two numbers add up to the target.")
 
 # ============================================
 # Example 2: Using a dictionary (optimized approach)
@@ -50,4 +51,22 @@ for i, num in enumerate(nums):
 
 # if the loop completes without finding a match
 if not found:
-    print("No two numbers add up to the target.")
+    print("Second approach. No two numbers add up to the target.")
+
+# ============================================
+# Example 3: Another test case (duplicate values)
+# ============================================
+nums = [3, 3]
+target = 6
+
+num_map = {}
+for i, num in enumerate(nums):
+    complement = target - num
+    if complement in num_map:
+        print("Indices:", [num_map[complement], i])  # Output: [0, 1]
+        break
+    num_map[num] = i
+
+# if the loop completes without finding a match
+if not found:
+    print("Third approach. No two numbers add up to the target.")
