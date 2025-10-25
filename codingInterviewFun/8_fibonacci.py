@@ -6,9 +6,19 @@
 # The Fibonacci sequence starts with 0 and 1, and each subsequent number
 # is the sum of the two preceding ones.
 #
+# Key Concepts:
+# - Sequence generation:
+#   Understanding how each number in the Fibonacci sequence is formed by adding the two preceding numbers.
+#
+# - Loops and iteration:
+#   Using a for loop to efficiently generate the sequence step-by-step and update values dynamically.
+#
+# - Recursion and base cases:
+#   Implementing a recursive approach that calls itself, with defined base cases (n <= 1) to stop the recursion.
+#
 # Examples:
-# 1. Input: n = 5 → Output: [0, 1, 1, 2, 3]
-# 2. Input: n = 8 → Output: [0, 1, 1, 2, 3, 5, 8, 13]
+# 1. Input: n = 8 → Output: [0, 1, 1, 2, 3, 5, 8, 13]
+# 2. Input: n = 5 → Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 # ============================================
 
 
@@ -47,7 +57,7 @@ def fibonacci_recursive(n):
     else:
         return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 
-n = 5  # Number of terms to display
+n = 10  # Number of terms to display
 recursive_sequence = [fibonacci_recursive(i) for i in range(n)]
 print("Fibonacci sequence using recursion:", recursive_sequence)
-# Output: Fibonacci sequence using recursion: [0, 1, 1, 2, 3]
+# Output: Fibonacci sequence using recursion: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
