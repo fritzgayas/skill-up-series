@@ -25,3 +25,33 @@ if sum_of_powers == num:
 else:
     print(num, "is not an Armstrong number.")
 # Output: 153 is an Armstrong number.
+
+
+# ============================================
+# Example 2: Using a function for reusability
+# ============================================
+def is_armstrong(num):
+    num_digits = len(str(num))
+    total = sum(int(digit) ** num_digits for digit in str(num))
+    return total == num
+
+for n in [9474, 123, 370, 407]:
+    if is_armstrong(n):
+        print(n, "is an Armstrong number.")
+    else:
+        print(n, "is not an Armstrong number.")
+# Output:
+# 9474 is an Armstrong number.
+# 123 is not an Armstrong number.
+# 370 is an Armstrong number.
+# 407 is an Armstrong number.
+
+
+# ============================================
+# Example 3: Handling invalid input
+# ============================================
+num = -153
+if num < 0:
+    print("Armstrong numbers are defined for non-negative integers only.")
+else:
+    print(is_armstrong(num))
