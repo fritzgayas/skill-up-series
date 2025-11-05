@@ -13,9 +13,21 @@
 # Mathematical relationship:
 #     GCD(a, b) * LCM(a, b) = a * b
 #
+# Key Concepts:
+# - Modular arithmetic:
+#   Using the modulus operator (%) to repeatedly find remainders.
+#
+# - Euclidean algorithm:
+#   An efficient way to compute GCD by recursively replacing (a, b) with (b, a % b)
+#   until the remainder becomes zero.
+#
+# - Mathematical relationships:
+#   Using the GCD to derive the LCM using the formula: LCM = (a * b) // GCD.
+#
 # Examples:
 # 1. Input: a = 12, b = 18 → GCD = 6, LCM = 36
 # 2. Input: a = 8, b = 20 → GCD = 4, LCM = 40
+# 3. Input: a = 7, b = 13 → GCD = 1, LCM = 91
 # ============================================
 
 
@@ -65,3 +77,14 @@ print("LCM (Recursive):", lcm_using_gcd(a, b))
 # Numbers: 8, 20
 # GCD (Recursive): 4
 # LCM (Recursive): 40
+
+
+# ============================================
+# Example 3: Handling invalid or zero inputs
+# ============================================
+a, b = 0, 15
+if a == 0 or b == 0:
+    print("\nGCD and LCM are not defined for zero.")
+else:
+    print("\nGCD:", gcd_recursive(a, b))
+    print("LCM:", lcm_using_gcd(a, b))
