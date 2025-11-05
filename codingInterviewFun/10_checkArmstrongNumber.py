@@ -5,6 +5,22 @@
 # Write a program that checks whether a given number is an Armstrong number.
 # An Armstrong number (also called a narcissistic number) is one that is equal
 # to the sum of its digits each raised to the power of the number of digits.
+#
+# Key Concepts:
+# - Digit extraction:
+#   Using the modulus operator (%) and integer division (//) to get individual digits.
+#
+# - Exponentiation:
+#   Raising each digit to the power of the total number of digits using **.
+#
+# - Mathematical logic:
+#   Summing powered digits and comparing the result to the original number.
+#
+# Examples:
+# 1. Input: 153 → Output: 153 is an Armstrong number. (1³ + 5³ + 3³ = 153)
+# 2. Input: 9474 → Output: 9474 is an Armstrong number.
+# 3. Input: 123 → Output: 123 is not an Armstrong number.
+# ============================================
 
 
 # ============================================
