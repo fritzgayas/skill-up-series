@@ -11,3 +11,18 @@ else:
     print(f"Factorial of {n} using iteration is {factorial}")
 # Output: Factorial of 5 using iteration is 120
 
+# ============================================
+# Example 2: Using recursion
+# ============================================
+def factorial_recursive(n):
+    """Return the factorial of a number using recursion."""
+    if n < 0:
+        return "Factorial is not defined for negative numbers."
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial_recursive(n - 1)
+
+n = 6
+print(f"Factorial of {n} using recursion is {factorial_recursive(n)}")
+# Output: Factorial of 6 using recursion is 720
