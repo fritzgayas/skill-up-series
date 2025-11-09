@@ -13,3 +13,19 @@ while num > 0:
 
 print(f"Sum of digits of {original_num} is {digit_sum}")
 # Output: Sum of digits of 1234 is 10
+
+# ============================================
+# Example 2: Using string conversion (more Pythonic approach)
+# ============================================
+num = -56
+digit_sum = sum(int(digit) for digit in str(abs(num)))
+print(f"Sum of digits of {num} is {digit_sum}")
+# Output: Sum of digits of -56 is 11
+
+# ============================================
+# Example 3: Handling zero and single-digit numbers
+# ============================================
+num = 7
+digit_sum = sum(int(digit) for digit in str(abs(num)))
+print(f"Sum of digits of {num} is {digit_sum}")
+# Output: Sum of digits of 7 is 7
