@@ -26,3 +26,13 @@ def factorial_recursive(n):
 n = 6
 print(f"Factorial of {n} using recursion is {factorial_recursive(n)}")
 # Output: Factorial of 6 using recursion is 720
+
+# ============================================
+# Example 3: Handling invalid inputs
+# ============================================
+n = -3
+if n < 0:
+    print(f"Factorial of {n} is not defined.")
+else:
+    print(f"Factorial of {n} is {factorial_recursive(n)}")
+# Output: Factorial of -3 is not defined.
